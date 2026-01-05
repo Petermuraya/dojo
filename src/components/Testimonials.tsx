@@ -96,6 +96,8 @@ export default function Testimonials() {
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-yellow-600"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div>
                     <h3 className="text-white font-bold text-lg">{testimonial.name}</h3>
@@ -127,6 +129,8 @@ export default function Testimonials() {
                   src={testimonials[currentIdx].image}
                   alt={testimonials[currentIdx].name}
                   className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-yellow-600"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div>
                   <h3 className="text-white font-bold text-lg">{testimonials[currentIdx].name}</h3>
