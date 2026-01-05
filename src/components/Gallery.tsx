@@ -2,47 +2,34 @@ import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import { useState } from 'react';
 
+import adultTraining from '../assets/aldulttraining.png';
+import artKarate from '../assets/artkarate.webp';
+import dojoCelebration from '../assets/dojocelebration.png';
+import heroKarate from '../assets/hero-karate.png';
+import instructorImg from '../assets/instructor.jpg';
+import karateKick from '../assets/karatekick.webp';
+import karateLeftKickBW from '../assets/karateleftkickblackandwqite.webp';
+import kick from '../assets/kick.jpg';
+import kidsTraining from '../assets/kidstraining.png';
+import personalizedTraining from '../assets/personalizedtraining.jpg';
+import teenTraining from '../assets/teentraining.png';
+import trainingImg from '../assets/training.png';
+import whatsappImage from '../assets/WhatsApp Image 2026-01-04 at 18.52.06.jpeg';
+
 const galleryItems = [
-  {
-    src: 'https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg',
-    alt: 'Training Session',
-    category: 'Training',
-  },
-  {
-    src: 'https://images.pexels.com/photos/416680/pexels-photo-416680.jpeg',
-    alt: 'Karate Tournament',
-    category: 'Competition',
-  },
-  {
-    src: 'https://images.pexels.com/photos/416758/pexels-photo-416758.jpeg',
-    alt: 'Student Training',
-    category: 'Training',
-  },
-  {
-    src: 'https://images.pexels.com/photos/3761959/pexels-photo-3761959.jpeg',
-    alt: 'Kids Class',
-    category: 'Kids',
-  },
-  {
-    src: 'https://images.pexels.com/photos/4326531/pexels-photo-4326531.jpeg',
-    alt: 'Advanced Techniques',
-    category: 'Training',
-  },
-  {
-    src: 'https://images.pexels.com/photos/416744/pexels-photo-416744.jpeg',
-    alt: 'Belt Ceremony',
-    category: 'Achievement',
-  },
-  {
-    src: 'https://images.pexels.com/photos/4325797/pexels-photo-4325797.jpeg',
-    alt: 'Team Training',
-    category: 'Training',
-  },
-  {
-    src: 'https://images.pexels.com/photos/4325891/pexels-photo-4325891.jpeg',
-    alt: 'Performance',
-    category: 'Competition',
-  },
+  { src: adultTraining, alt: 'Adult Training', category: 'Training' },
+  { src: artKarate, alt: 'Art of Karate', category: 'Training' },
+  { src: dojoCelebration, alt: 'Dojo Celebration', category: 'Achievement' },
+  { src: heroKarate, alt: 'Hero Karate', category: 'Training' },
+  { src: instructorImg, alt: 'Instructor', category: 'Instructor' },
+  { src: karateKick, alt: 'Karate Kick', category: 'Training' },
+  { src: karateLeftKickBW, alt: 'Left Kick (B/W)', category: 'Training' },
+  { src: kick, alt: 'Kick', category: 'Training' },
+  { src: kidsTraining, alt: 'Kids Training', category: 'Kids' },
+  { src: personalizedTraining, alt: 'Personalized Training', category: 'Training' },
+  { src: teenTraining, alt: 'Teen Training', category: 'Training' },
+  { src: trainingImg, alt: 'Training', category: 'Training' },
+  { src: whatsappImage, alt: 'Event Photo', category: 'Event' },
 ];
 
 export default function Gallery() {
@@ -87,11 +74,11 @@ export default function Gallery() {
               onClick={() => openLightbox(idx)}
               className="group cursor-pointer overflow-hidden rounded-lg"
             >
-              <div className="relative aspect-square overflow-hidden bg-gray-900">
+              <div className="relative h-64 md:h-72 lg:h-80 overflow-hidden bg-gray-900 flex items-center justify-center">
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="max-h-full max-w-full object-contain transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-4 w-full">
