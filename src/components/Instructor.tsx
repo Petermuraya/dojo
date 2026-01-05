@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Medal, Trophy, Award, Clock, Target, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import instructorImage from '../assets/instructor.jpg';
+import OptimizedImage from './OptimizedImage';
 
 export default function Instructor({ summary }: { summary?: boolean }) {
   const isSummary = !!summary;
@@ -22,7 +23,7 @@ export default function Instructor({ summary }: { summary?: boolean }) {
       <section className="py-16 px-4 bg-black">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
           <div className="w-40 h-40 rounded-2xl overflow-hidden border-4 border-yellow-600 bg-black flex items-center justify-center">
-            <img src={instructorImage} alt="Sensei Kelvin" className="max-h-full max-w-full object-contain object-center" />
+            <OptimizedImage src={instructorImage} alt="Sensei Kelvin" className="max-h-full max-w-full object-contain object-center" />
           </div>
           <div>
             <h3 className="text-3xl font-bold text-white">Sensei Kelvin Kiarie</h3>
@@ -70,26 +71,23 @@ export default function Instructor({ summary }: { summary?: boolean }) {
             <div className="relative group w-full h-[min(80vh,900px)] rounded-3xl overflow-hidden border-8 border-gray-800 shadow-[0_30px_60px_rgba(0,0,0,0.6)]">
               {/* Image - keep portrait fully visible */}
               <div className="w-full h-full flex items-center justify-center bg-black">
-                <img
+                <OptimizedImage
                   src={instructorImage}
                   alt="Sensei Kelvin Kiarie"
                   className="max-h-full max-w-full w-auto h-full object-contain object-center transform group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
 
-              {/* Top-left Experience Badge */}
-              <div className="absolute top-6 left-6 bg-red-700/90 text-white px-5 py-3 rounded-xl shadow-2xl z-20">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5" />
-                  <span className="font-bold tracking-widest">15+ YEARS</span>
+              {/* Centered Experience + Rank Badges (responsive) */}
+              <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-3 px-3">
+                <div className="bg-red-700/90 text-white px-4 py-2 rounded-full shadow-2xl text-sm sm:text-base md:text-lg font-bold flex items-center gap-2">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span>15+ YEARS</span>
                 </div>
-              </div>
 
-              {/* Bottom-right Rank Badge */}
-              <div className="absolute bottom-6 right-6 bg-yellow-400 text-black px-6 py-3 rounded-xl border border-black/20 shadow-2xl z-20">
-                <div className="flex flex-col items-center">
-                  <span className="text-xs font-bold uppercase tracking-widest">Rank</span>
-                  <span className="text-2xl font-black">2ND DAN</span>
+                <div className="bg-yellow-400 text-black px-4 py-1.5 rounded-full border border-black/20 shadow-2xl text-xs sm:text-sm md:text-base font-extrabold text-center">
+                  <div className="uppercase tracking-widest text-[10px] sm:text-xs">Rank</div>
+                  <div className="leading-tight">2ND DAN</div>
                 </div>
               </div>
 
