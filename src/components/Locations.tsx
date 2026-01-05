@@ -4,23 +4,23 @@ import { MapPin, Clock, Phone } from 'lucide-react';
 const locations = [
   {
     name: 'Mwiki Kenpo Club',
-    address: 'Mwiki, Nairobi',
+    address: 'Mwiki',
     hours: 'Mon-Fri: 3:00 PM - 8:00 PM\nSat-Sun: 9:00 AM - 5:00 PM',
-    phone: '+254 700 123 456',
+    phone: '0713178790',
     classes: 'All Programs',
   },
   {
-    name: 'Gym Rock & Antoniette',
-    address: 'Sunton Mwiki, Nairobi',
+    name: 'Gym Rock and Antonioded',
+    address: 'Sunton Mwiki',
     hours: 'Mon-Fri: 4:00 PM - 9:00 PM\nSat-Sun: 10:00 AM - 6:00 PM',
-    phone: '+254 700 234 567',
+    phone: '0713178790',
     classes: 'Competition Training',
   },
   {
     name: 'Mount Lavena Girls',
-    address: 'Kasarani, Nairobi',
+    address: 'Kasarani',
     hours: 'Mon-Fri: 3:30 PM - 7:30 PM\nSat: 9:00 AM - 4:00 PM',
-    phone: '+254 700 345 678',
+    phone: '0713178790',
     classes: 'Kids & Teens',
   },
 ];
@@ -77,8 +77,10 @@ export default function Locations() {
                   <div className="flex gap-3">
                     <Phone className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                     <a
-                      href={`https://wa.me/${location.phone.replace(/\D/g, '')}`}
+                      href={`https://wa.me/254${location.phone.replace(/\D/g,'').replace(/^0/,'')}`}
                       className="text-gray-400 hover:text-green-400 text-sm transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       {location.phone}
                     </a>
