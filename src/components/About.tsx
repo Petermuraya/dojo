@@ -18,15 +18,15 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="order-2 md:order-1"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               ABOUT THE <span className="text-red-600">DOJO</span>
             </h2>
 
-            <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+            <p className="text-gray-300 text-base mb-6 leading-relaxed">
               Founded on principles of traditional karate, our dojo is a sanctuary for discipline and personal growth. We honor 300 years of martial arts heritage while embracing modern training science.
             </p>
 
-            <p className="text-gray-400 text-base mb-8 leading-relaxed">
+            <p className="text-gray-400 text-sm md:text-base mb-8 leading-relaxed">
               Every student is more than a rank. They're a part of our family, learning not just to fight, but to live with purpose, respect, and unshakeable resolve.
             </p>
 
@@ -59,7 +59,7 @@ export default function About() {
               <img
                 src="https://images.pexels.com/photos/416758/pexels-photo-416758.jpeg"
                 alt="Karate Training"
-                className="w-full max-w-md rounded-lg object-cover border-4 border-yellow-600 relative z-10"
+                className="w-full max-w-sm md:max-w-md lg:max-w-lg rounded-lg object-cover border-4 border-yellow-600 relative z-10"
               />
             </div>
           </motion.div>
