@@ -15,6 +15,7 @@ import personalizedTraining from '../assets/personalizedtraining.jpg';
 import teenTraining from '../assets/teentraining.png';
 import trainingImg from '../assets/training.png';
 import whatsappImage from '../assets/WhatsApp Image 2026-01-04 at 18.52.06.jpeg';
+import OptimizedImage from './OptimizedImage';
 
 const galleryItems = [
   { src: adultTraining, alt: 'Adult Training', category: 'Training' },
@@ -75,7 +76,7 @@ export default function Gallery() {
               className="group cursor-pointer overflow-hidden rounded-lg"
             >
               <div className="relative h-64 md:h-72 lg:h-80 overflow-hidden bg-gray-900 flex items-center justify-center">
-                <img
+                <OptimizedImage
                   src={item.src}
                   alt={item.alt}
                   className="max-h-full max-w-full object-contain transform group-hover:scale-105 transition-transform duration-500"
@@ -120,15 +121,9 @@ export default function Gallery() {
               </svg>
             </button>
 
-            <motion.img
-              key={selectedIdx}
-              src={galleryItems[selectedIdx].src}
-              alt="Gallery"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="max-w-full max-h-[80vh] rounded-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
+            <motion.div key={selectedIdx} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-full max-h-[80vh] rounded-lg" onClick={(e) => e.stopPropagation()}>
+              <OptimizedImage src={galleryItems[selectedIdx].src} alt="Gallery" className="max-w-full max-h-[80vh] rounded-lg" />
+            </motion.div>
 
             <button
               onClick={(e) => {
