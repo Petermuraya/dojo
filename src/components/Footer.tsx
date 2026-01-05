@@ -53,12 +53,12 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex gap-2 items-start">
                 <Phone className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+254 700 123 456</span>
+                <a href="tel:+254713178790" className="text-gray-400 hover:text-red-600 transition-colors text-sm">0713178790</a>
               </li>
               <li className="flex gap-2 items-start">
                 <Mail className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                <a href="mailto:sensei@dojokarate.com" className="text-gray-400 hover:text-red-600 transition-colors text-sm">
-                  sensei@dojokarate.com
+                <a href="mailto:kevokiash@gmail.com" className="text-gray-400 hover:text-red-600 transition-colors text-sm">
+                  kevokiash@gmail.com
                 </a>
               </li>
               <li className="flex gap-2 items-start">
