@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import adultTraining from '../assets/aldulttraining.png';
 
 export default function About() {
   const principles = [
@@ -54,12 +55,12 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="order-1 md:order-2 flex justify-center"
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-red-600/20 to-yellow-600/20" />
+            <div className="relative w-full max-w-2xl">
+              <div className="absolute -inset-6 rounded-2xl bg-gradient-to-br from-red-600/20 to-yellow-600/20 blur-2xl" />
               <img
-                src="https://images.pexels.com/photos/416758/pexels-photo-416758.jpeg"
-                alt="Karate Training"
-                className="w-full max-w-sm md:max-w-md lg:max-w-lg rounded-lg object-cover border-4 border-yellow-600 relative z-10"
+                src={adultTraining}
+                alt="Dojo training session"
+                className="w-full h-[420px] md:h-[520px] rounded-2xl object-cover border-4 border-yellow-600 relative z-10 shadow-2xl"
               />
             </div>
           </motion.div>
