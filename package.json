@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
   },
   "dependencies": {
+    "react-router-dom": "^6.18.0",
     "@supabase/supabase-js": "^2.57.4",
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.344.0",
