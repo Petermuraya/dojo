@@ -30,7 +30,7 @@ export default function CTA() {
           className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
         >
           <motion.a
-            href="https://wa.me/254700123456?text=I%20want%20to%20join%20the%20karate%20dojo"
+            href="https://wa.me/254713178790?text=I%20want%20to%20join%20the%20karate%20dojo"
             target="_blank"
             rel="noopener noreferrer"
             animate={{ boxShadow: ['0 0 20px rgba(34, 197, 94, 0.3)', '0 0 40px rgba(34, 197, 94, 0.6)', '0 0 20px rgba(34, 197, 94, 0.3)'] }}
@@ -41,7 +41,7 @@ export default function CTA() {
             WHATSAPP JOIN
           </motion.a>
           <a
-            href="mailto:sensei@dojokarate.com?subject=Karate%20Training%20Inquiry"
+            href="mailto:kevokiash@gmail.com?subject=Karate%20Training%20Inquiry"
             className="group px-10 py-5 bg-red-600 hover:bg-red-700 text-white font-bold text-lg flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-lg hover:shadow-red-600/50"
           >
             <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
