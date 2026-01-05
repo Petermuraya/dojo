@@ -117,3 +117,12 @@ h1, h2, h3, h4, h5, h6 {
 .belt-black {
   @apply bg-gray-900;
 }
+
+:root {
+  --nav-height: 4rem;
+}
+
+/* Ensure anchored sections and scrolled content appear below the fixed navbar */
+section {
+  scroll-margin-top: var(--nav-height);
+}
