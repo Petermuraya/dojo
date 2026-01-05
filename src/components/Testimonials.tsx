@@ -73,12 +73,12 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             VOICES FROM OUR <span className="text-red-600">DOJO</span>
           </h2>
-          <p className="text-gray-400 text-lg">Stories of transformation and achievement</p>
+          <p className="text-gray-400 text-base">Stories of transformation and achievement</p>
         </motion.div>
 
         <div className="relative">
@@ -89,13 +89,13 @@ export default function Testimonials() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-8 bg-gray-900 border-2 border-gray-800 hover:border-red-600 rounded-lg transition-all duration-300 group"
+                className="p-6 bg-gray-900 border-2 border-gray-800 hover:border-red-600 rounded-lg transition-all duration-300 group"
               >
                 <div className="flex gap-4 mb-6">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover border-2 border-yellow-600"
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-yellow-600"
                   />
                   <div>
                     <h3 className="text-white font-bold text-lg">{testimonial.name}</h3>
@@ -120,13 +120,13 @@ export default function Testimonials() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              className="p-8 bg-gray-900 border-2 border-red-600 rounded-lg"
+              className="p-6 bg-gray-900 border-2 border-red-600 rounded-lg"
             >
               <div className="flex gap-4 mb-6">
                 <img
                   src={testimonials[currentIdx].image}
                   alt={testimonials[currentIdx].name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-yellow-600"
+                  className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-yellow-600"
                 />
                 <div>
                   <h3 className="text-white font-bold text-lg">{testimonials[currentIdx].name}</h3>
