@@ -9,25 +9,38 @@ import Ranks from './components/Ranks';
 import Programs from './components/Programs';
 import Locations from './components/Locations';
 import Testimonials from './components/Testimonials';
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation, Routes as RR, Route as RRoute, Navigate } from 'react-router-dom';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    // Always start at top on route change / refresh
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
     <div className="w-full bg-black pt-16 min-h-screen">
       <Navbar />
+      <ScrollToTop />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/instructor" element={<InstructorPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+      <RR>
+        <RRoute path="/" element={<Home />} />
+        <RRoute path="/about" element={<AboutPage />} />
+        <RRoute path="/instructor" element={<InstructorPage />} />
+        <RRoute path="/gallery" element={<GalleryPage />} />
+        <RRoute path="/contact" element={<ContactPage />} />
         {/* Additional standalone pages that reuse components */}
-        <Route path="/programs" element={<Programs />} />
-        <Route path="/locations" element={<Locations />} />
-        <Route path="/ranks" element={<Ranks />} />
-        <Route path="/testimonials" element={<Testimonials />} />
-      </Routes>
+        <RRoute path="/programs" element={<Programs />} />
+        <RRoute path="/locations" element={<Locations />} />
+        <RRoute path="/ranks" element={<Ranks />} />
+        <RRoute path="/testimonials" element={<Testimonials />} />
+        {/* Fallback to home for unknown routes */}
+        <RRoute path="*" element={<Navigate to="/" replace />} />
+      </RR>
 
       <Footer />
     </div>
