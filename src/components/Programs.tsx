@@ -66,10 +66,10 @@ export default function Programs() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             TRAINING <span className="text-red-600">PROGRAMS</span>
           </h2>
-          <p className="text-gray-400 text-lg">Programs tailored for every age and skill level</p>
+          <p className="text-gray-400 text-lg">TRAIN WITH PURPOSE</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {programs.map((program, idx) => (
             <motion.div
               key={idx}
@@ -82,7 +82,7 @@ export default function Programs() {
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-              <div className="p-8">
+              <div className="p-6 sm:p-8">
                 <div className="flex items-center justify-between mb-4">
                   <div className="text-red-600">{program.icon}</div>
                   <span className="text-yellow-600 font-bold text-sm cinzel">
@@ -90,7 +90,7 @@ export default function Programs() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
                   {program.title}
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">{program.description}</p>
@@ -124,7 +124,7 @@ export default function Programs() {
                   </div>
                 </motion.div>
 
-                <button className="w-full px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold transition-all duration-300 hover:shadow-lg hover:shadow-red-600/50">
+                <button className="w-full px-4 py-2 sm:px-6 sm:py-3 bg-red-600 hover:bg-red-700 text-white font-bold transition-all duration-300 hover:shadow-lg hover:shadow-red-600/50">
                   ENROLL NOW
                 </button>
               </div>
