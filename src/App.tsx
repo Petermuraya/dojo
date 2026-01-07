@@ -5,6 +5,12 @@ import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
 import InstructorPage from './pages/InstructorPage';
 import ContactPage from './pages/ContactPage';
+import RegisterPage from './pages/RegisterPage';
+import RolesPage from './pages/Admin/RolesPage';
+import LoginPage from './pages/LoginPage';
+import ResetPasswordPage from './pages/ResetPasswordPage';
+import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 import Ranks from './components/Ranks';
 import Programs from './components/Programs';
 import Locations from './components/Locations';
@@ -33,6 +39,19 @@ function App() {
         <RRoute path="/instructor" element={<InstructorPage />} />
         <RRoute path="/gallery" element={<GalleryPage />} />
         <RRoute path="/contact" element={<ContactPage />} />
+        <RRoute path="/register" element={<RegisterPage />} />
+        <RRoute path="/admin/roles" element={<RolesPage />} />
+        <RRoute path="/admin" element={<Navigate to="/admin/roles" replace />} />
+        <RRoute path="/login" element={<LoginPage />} />
+        <RRoute path="/reset-password" element={<ResetPasswordPage />} />
+        <RRoute
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
         {/* Additional standalone pages that reuse components */}
         <RRoute path="/programs" element={<Programs />} />
         <RRoute path="/locations" element={<Locations />} />
