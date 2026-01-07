@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { useSupabaseAuth } from '../contexts/SupabaseProvider';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,6 +44,7 @@ export default function Navbar() {
     { label: 'Gallery', to: '/gallery' },
     { label: 'Locations', to: '/locations' },
     { label: 'Contact', to: '/contact' },
+    { label: 'Register', to: '/register' },
   ];
 
   const scrollToSection = (_: string) => {
@@ -51,6 +53,7 @@ export default function Navbar() {
   };
 
   const navigate = useNavigate();
+  const { isAdmin, isInstructor, user, signOut } = useSupabaseAuth();
 
   return (
     <>
@@ -96,6 +99,34 @@ export default function Navbar() {
                 />
               </NavLink>
             ))}
+            {isAdmin && (
+              <NavLink
+                to="/admin"
+                className={({ isActive }) =>
+                  `relative font-semibold text-sm transition-colors group ${
+                    isActive ? 'text-white' : 'text-gray-300 hover:text-white'
+                  }`
+                }
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Admin
+                <motion.div
+                  layoutId="underline"
+                  className="absolute bottom-0 left-0 h-0.5 bg-red-600"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: '100%' }}
+                  transition={{ duration: 0.3 }}
+                />
+              </NavLink>
+            )}
+            {user ? (
+              <>
+                <NavLink to="/dashboard" className="text-sm font-semibold text-gray-300 hover:text-white">Dashboard</NavLink>
+                <button onClick={() => signOut()} className="px-4 py-2 bg-gray-800 text-sm text-gray-200 rounded-lg hover:bg-gray-700">Logout</button>
+              </>
+            ) : (
+              <NavLink to="/login" className="text-sm font-semibold text-gray-300 hover:text-white">Login</NavLink>
+            )}
           </div>
 
           <motion.button
@@ -160,6 +191,63 @@ export default function Navbar() {
                     {link.label}
                   </motion.button>
                 ))}
+
+                {isAdmin && (
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.25, delay: navLinks.length * 0.04 }}
+                    onClick={() => {
+                      navigate('/admin');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-3 bg-yellow-600 hover:bg-yellow-700 text-black font-bold mt-2 rounded-lg"
+                  >
+                    ADMIN
+                  </motion.button>
+                )}
+
+                {user ? (
+                  <>
+                    <motion.button
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.25, delay: navLinks.length * 0.04 + 0.02 }}
+                      onClick={() => {
+                        navigate('/dashboard');
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-3 bg-gray-800 hover:bg-gray-700 text-white font-bold mt-2 rounded-lg"
+                    >
+                      DASHBOARD
+                    </motion.button>
+                    <motion.button
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.25, delay: navLinks.length * 0.04 + 0.04 }}
+                      onClick={() => {
+                        signOut();
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-3 bg-gray-800 hover:bg-gray-700 text-white font-bold mt-2 rounded-lg"
+                    >
+                      LOGOUT
+                    </motion.button>
+                  </>
+                ) : (
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.25, delay: navLinks.length * 0.04 + 0.02 }}
+                    onClick={() => {
+                      navigate('/login');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-left px-4 py-3 bg-gray-800 hover:bg-gray-700 text-white font-bold mt-2 rounded-lg"
+                  >
+                    LOGIN
+                  </motion.button>
+                )}
 
                 <motion.button
                   initial={{ opacity: 0, y: 20 }}
