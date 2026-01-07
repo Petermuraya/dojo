@@ -31,6 +31,15 @@ export default function Ranks() {
       time: '9-12 months'
     },
     { 
+      name: 'Purple Belt', 
+      level: 'Development', 
+      color: 'bg-purple-600', 
+      textColor: 'text-white',
+      description: 'Deepening technique, strategy, and conditioning',
+      icon: '🟣',
+      time: '10-14 months'
+    },
+    { 
       name: 'Green Belt', 
       level: 'Intermediate', 
       color: 'bg-emerald-600', 
@@ -38,24 +47,6 @@ export default function Ranks() {
       description: 'Significant growth and technical refinement',
       icon: '🌿',
       time: '1-1.5 years'
-    },
-    { 
-      name: 'Blue Belt', 
-      level: 'Advanced', 
-      color: 'bg-blue-600', 
-      textColor: 'text-white',
-      description: 'Sky opens up for deeper understanding and application',
-      icon: '💎',
-      time: '1.5-2 years'
-    },
-    { 
-      name: 'Red Belt', 
-      level: 'Expert', 
-      color: 'bg-red-600', 
-      textColor: 'text-white',
-      description: 'Fire and mastery of complex techniques',
-      icon: '⚡',
-      time: '2-3 years'
     },
     { 
       name: 'Brown Belt', 
